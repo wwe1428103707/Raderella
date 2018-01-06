@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Xml;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;                     //TextMeshPro的命名空间,A script interface for the TextMeshPro component，详见http://digitalnativestudios.com/textmeshpro/docs/ScriptReference/TextMeshPro.html
 
 public class XMLController : MonoBehaviour {
 
@@ -22,7 +23,7 @@ public class XMLController : MonoBehaviour {
             {
                 try
                 {
-                    text.GetComponent<Text>().text = xl.InnerText;
+                    text.GetComponent<TextMeshProUGUI>().SetText(xl.InnerText);    //放弃原生的Text,改用TextMeshPro，真他娘的好用
                 }
                 catch (System.Exception e)
                 {
